@@ -11,6 +11,8 @@
         <button onclick="getElementById('Prova').innerHTML=Date()">Clicca qui per l'orario corrente</button>
         <p></p>
         <button onclick="getElementById('Prova').innerHTML=funzionetokio()">Clicca qui per l'ora con fuso orario di Tokyo</button> 
+        <p></p>
+        <button onclick="getElementById('Prova').innerHTML=funzioneLosAngeles()">Clicca qui per l'ora con fuso orario di Los Angeles</button>
             
             <script>
                 function funzionetokio()
@@ -19,6 +21,13 @@
                     asiaTime = new Date(asiaTime);
                     console.log('Tokyo time: '+asiaTime.toLocaleString());
                     return asiaTime;
+                }
+                function funzioneLosAngeles()
+                {
+                    var usaTime = new Date().toLocaleString("en-US", {timeZone: "America/Los_Angeles"});
+                    usaTime = new Date(usaTime);
+                    console.log('Los Angeles time: ' +usaTime.toLocaleString());
+                    return usaTime;
                 }
             </script>
 
