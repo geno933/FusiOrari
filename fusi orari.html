@@ -10,16 +10,15 @@
         <p id = "Prova"></p>
         <button onclick="getElementById('Prova').innerHTML=Date()">Clicca qui per l'orario corrente</button>
         <p></p>
-        <button onclick="getElementById('Prova').innerHTML=funzionetokio()">Clicca qui per l'ora con fuso orario di Tokio</button> 
+        <button onclick="getElementById('Prova').innerHTML=funzionetokio()">Clicca qui per l'ora con fuso orario di Tokyo</button> 
             
             <script>
                 function funzionetokio()
                 {
-                    var date = new Date();
-                    var utc = date.getTime() + (date.getTimezoneOffset() * 60000);
-                    var newdate = new Date (utc + (3600000 * 9));
-                    return newdate.toLocaleDateString();
-                    //document.getElementById("Prova").innerHTML = ""
+                    var asiaTime = new Date().toLocaleString("ja-JP", {timeZone: "Asia/Tokyo"});
+                    asiaTime = new Date(asiaTime);
+                    console.log('Tokyo time: '+asiaTime.toLocaleString());
+                    return asiaTime;
                 }
             </script>
 
