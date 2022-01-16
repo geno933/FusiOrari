@@ -15,16 +15,19 @@
         <button onclick="getElementById('Prova').innerHTML=funzioneLosAngeles()">Clicca qui per l'ora con fuso orario di Los Angeles</button>
             
             <script>
+
+                "use scrict";
+
                 function funzionetokio()
                 {
-                    var asiaTime = new Date().toLocaleString("ja-JP", {timeZone: "Asia/Tokyo"});
+                    let asiaTime = new Date().toLocaleString("ja-JP", {timeZone: "Asia/Tokyo"});
                     asiaTime = new Date(asiaTime);
                     console.log('Tokyo time: '+asiaTime.toLocaleString());
                     return asiaTime;
                 }
                 function funzioneLosAngeles()
                 {
-                    var usaTime = new Date().toLocaleString("en-US", {timeZone: "America/Los_Angeles"});
+                    let usaTime = new Date().toLocaleString("en-US", {timeZone: "America/Los_Angeles"});
                     usaTime = new Date(usaTime);
                     console.log('Los Angeles time: ' +usaTime.toLocaleString());
                     return usaTime;
