@@ -18,20 +18,24 @@
 
                 "use scrict";
 
-                function funzionetokio()
-                {
-                    let asiaTime = new Date().toLocaleString("ja-JP", {timeZone: "Asia/Tokyo"});
-                    asiaTime = new Date(asiaTime);
-                    console.log('Tokyo time: '+asiaTime.toLocaleString());
-                    return asiaTime;
-                }
-                function funzioneLosAngeles()
-                {
-                    let usaTime = new Date().toLocaleString("en-US", {timeZone: "America/Los_Angeles"});
-                    usaTime = new Date(usaTime);
-                    console.log('Los Angeles time: ' +usaTime.toLocaleString());
-                    return usaTime;
-                }
+                window.addEventListener
+                (
+                    'DOMContentLoaded',
+                            function funzionetokio()
+                                {
+                                    let asiaTime = new Date().toLocaleString("ja-JP", {timeZone: "Asia/Tokyo"});
+                                    asiaTime = new Date(asiaTime);
+                                    console.log('Tokyo time: '+asiaTime.toLocaleString());
+                                    return asiaTime;
+                                }
+                            function funzioneLosAngeles()
+                                {
+                                    let usaTime = new Date().toLocaleString("en-US", {timeZone: "America/Los_Angeles"});
+                                    usaTime = new Date(usaTime);
+                                    console.log('Los Angeles time: ' +usaTime.toLocaleString());
+                                    return usaTime;
+                                }
+                )
             </script>
 
     </body>
