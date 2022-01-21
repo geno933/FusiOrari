@@ -21,14 +21,19 @@
                 window.addEventListener
                 (
                     'DOMContentLoaded',
-                            function funzionetokio()
+                            function funzionedata()
+                                {
+                                    let quiData = new Date();
+                                    console.log(('Your time: ') + quiData.toLocaleString());
+                                }
+                            ,function funzionetokio()
                                 {
                                     let asiaTime = new Date().toLocaleString("ja-JP", {timeZone: "Asia/Tokyo"});
                                     asiaTime = new Date(asiaTime);
                                     console.log('Tokyo time: '+asiaTime.toLocaleString());
                                     return asiaTime;
                                 }
-                            function funzioneLosAngeles()
+                            ,function funzioneLosAngeles()
                                 {
                                     let usaTime = new Date().toLocaleString("en-US", {timeZone: "America/Los_Angeles"});
                                     usaTime = new Date(usaTime);
