@@ -8,14 +8,18 @@
         <h1>Seleziona il fuso orario da visualizzare</h1>
           
         <p id = "Prova"></p>
-        <button onclick="getElementById('Prova').innerHTML=Date()">Clicca qui per l'orario corrente</button>
+        <button id="button1">Clicca qui per l'ora locale</button>
         <p></p>
-        <button onclick="getElementById('Prova').innerHTML=funzionetokio()">Clicca qui per l'ora con fuso orario di Tokyo</button> 
+        <button id="button2">Clicca qui per l'ora con fuso orario di Tokyo</button> 
         <p></p>
-        <button onclick="getElementById('Prova').innerHTML=funzioneLosAngeles()">Clicca qui per l'ora con fuso orario di Los Angeles</button>
+        <button id="button3">Clicca qui per l'ora con fuso orario di Los Angeles</button>
             
             <script>
-
+           
+           document.getElementById("button1").addEventListener("click", funzionedata);
+            document.getElementById("button2").addEventListener("click", funzionetokio);
+            document.getElementById("button1").addEventListener("click", funzioneLosAngeles);
+            
                 "use scrict";
 
                 window.addEventListener
@@ -25,20 +29,19 @@
                                 {
                                     let quiData = new Date();
                                     console.log(('Your time: ') + quiData.toLocaleString());
+                                    
                                 }
                             ,function funzionetokio()
                                 {
                                     let asiaTime = new Date().toLocaleString("ja-JP", {timeZone: "Asia/Tokyo"});
                                     asiaTime = new Date(asiaTime);
                                     console.log('Tokyo time: '+asiaTime.toLocaleString());
-                                    return asiaTime;
                                 }
                             ,function funzioneLosAngeles()
                                 {
                                     let usaTime = new Date().toLocaleString("en-US", {timeZone: "America/Los_Angeles"});
                                     usaTime = new Date(usaTime);
                                     console.log('Los Angeles time: ' +usaTime.toLocaleString());
-                                    return usaTime;
                                 }
                 )
             </script>
