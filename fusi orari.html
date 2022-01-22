@@ -9,41 +9,52 @@
           
         <p id = "Prova"></p>
         <button id="button1">Clicca qui per l'ora locale</button>
+        <h3 id = "datalocal"></h3>
         <p></p>
         <button id="button2">Clicca qui per l'ora con fuso orario di Tokyo</button> 
+        <h3 id = "datatokio"></h3>
         <p></p>
         <button id="button3">Clicca qui per l'ora con fuso orario di Los Angeles</button>
+        <h3 id = "datausa"></h3>
             
             <script>
-           
-           document.getElementById("button1").addEventListener("click", funzionedata);
-            document.getElementById("button2").addEventListener("click", funzionetokio);
-            document.getElementById("button1").addEventListener("click", funzioneLosAngeles);
-            
+
                 "use scrict";
 
-                window.addEventListener
-                (
-                    'DOMContentLoaded',
-                            function funzionedata()
-                                {
-                                    let quiData = new Date();
-                                    console.log(('Your time: ') + quiData.toLocaleString());
-                                    
-                                }
-                            ,function funzionetokio()
-                                {
-                                    let asiaTime = new Date().toLocaleString("ja-JP", {timeZone: "Asia/Tokyo"});
-                                    asiaTime = new Date(asiaTime);
-                                    console.log('Tokyo time: '+asiaTime.toLocaleString());
-                                }
-                            ,function funzioneLosAngeles()
-                                {
-                                    let usaTime = new Date().toLocaleString("en-US", {timeZone: "America/Los_Angeles"});
-                                    usaTime = new Date(usaTime);
-                                    console.log('Los Angeles time: ' +usaTime.toLocaleString());
-                                }
-                )
+                    function funzionedata()
+                    {
+                        let quiData = new Date();
+                        console.log(('Your time: ') + quiData.toLocaleString());
+                        document.getElementById("datalocal").innerHTML = quiData;
+                        return quiData;
+                    }
+                    function funzionetokio()
+                    {
+                        let asiaTime = new Date().toLocaleString("ja-JP", {timeZone: "Asia/Tokyo"});
+                        asiaTime = new Date(asiaTime);
+                        console.log('Tokyo time: '+asiaTime.toLocaleString());
+                        document.getElementById("datatokio").innerHTML = asiaTime;
+                        return asiaTime;
+                    }
+                    function funzioneLosAngeles()
+                    {
+                        let usaTime = new Date().toLocaleString("en-US", {timeZone: "America/Los_Angeles"});
+                        usaTime = new Date(usaTime);
+                        console.log('Los Angeles time: ' +usaTime.toLocaleString());
+                        document.getElementById("datausa").innerHTML = usaTime;
+                        return usaTime;
+                    }
+
+                    window.addEventListener(
+
+				          'DOMContentLoaded', 
+				            function(event)
+                            {
+                                document.getElementById("button1").addEventListener("click", funzionedata);
+                                document.getElementById("button2").addEventListener("click", funzionetokio);
+                                document.getElementById("button3").addEventListener("click", funzioneLosAngeles);
+                            }
+                    );        
             </script>
 
     </body>
